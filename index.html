@@ -86,7 +86,7 @@ function calcularTudo() {
         { nome: "Paracetamol (200mg/ml)", dose: Math.round(peso) + " gts", obs: "6/6h" },
         { nome: "Ibuprofeno (50mg/ml)", dose: Math.round(peso) + " a " + Math.round(peso*2) + " gts", obs: "8/8h" },
         { nome: "Simeticona (75mg/ml)", dose: Math.round(peso) + " gts", obs: "8/8h (Máx 25gts)" },
-        { nome: "Metoclopramida (4mg/ml)", dose: Math.round(peso*0.5) + " gts", obs: "8/8h (Cuidado < 1 ano)" },
+        { nome: "Metoclopramida (4mg/ml)", dose: Math.round(peso) + " gts", obs: "8/8h (Cuidado < 1 ano)" },
         { nome: "Bromoprida (4mg/ml)", dose: Math.round(peso*0.5) + " a " + Math.round(peso) + " gts", obs: "8/8h" }
     ];
 
@@ -95,7 +95,7 @@ function calcularTudo() {
     // Metoclopramida Inj: 5mg/ml | Dose: 0.1mg/kg -> peso * 0.1 / 5
     const injetaveis = [
         { nome: "Dipirona (500mg/ml)", dose: (peso * 0.04).toFixed(2) + " ml", via: "IM/IV Lento" },
-        { nome: "Metoclopramida (5mg/ml)", dose: (peso * 0.02).toFixed(2) + " ml", via: "IV/IM" },
+        { nome: "Metoclopramida (5mg/ml)", dose: (peso * 0.05).toFixed(2) + " ml", via: "IV/IM" },
         { nome: "Bromoprida (5mg/ml)", dose: (peso * 0.03).toFixed(2) + " ml", via: "IV/IM" }
     ];
 
