@@ -78,10 +78,25 @@
 <script>
 function calcularTudo() {
     const peso = parseFloat(document.getElementById('peso').value.replace(',', '.'));
+	const idade = parseFloat(document.getElementById('idade').value.replace(',', '.'));
     if (!peso || peso <= 0) { alert("Informe o peso."); return; }
-
+	var ipatroprio=0;
+	if (idade>12) {
+		ipatroprio=40;
+	}else if(idade>6){
+		ipatroprio=20;
+	}else if(idade>0){
+		ipatroprio="8 a 20";
+	}
+	var amox=(peso/3).toFixed(2);
+	if(amox>10){amox=10;}
+	
+	
+	
     // --- LÓGICA ORAIS ---
     const orais = [
+		{ nome: "Amoxicilina (250mg/ml)", dose: amox + " ml", obs: "máximo de 10ml de 8/8h" },
+		{ nome: "Brometo de Ipratrópio ( 0,25 mg/ml)", dose: ipatroprio + " gts", obs: "Nebulização" },
         { nome: "Dipirona (500mg/ml)", dose: Math.round(peso) + " gts", obs: "6/6h" },
         { nome: "Paracetamol (200mg/ml)", dose: Math.round(peso) + " gts", obs: "6/6h" },
         { nome: "Ibuprofeno (50mg/ml)", dose: Math.round(peso) + " a " + Math.round(peso*2) + " gts", obs: "8/8h" },
